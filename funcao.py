@@ -1,24 +1,12 @@
-from datetime import timezone
-data = timezone()
 #Declarar uma função
-def bom_dia():
-    print("Bom Dia!!")
+def saudacoes(hora_do_dia):
+    if hora_do_dia >= 0 and hora_do_dia <= 12:
+        print("Bom Dia!")
+    elif hora_do_dia >= 13 and hora_do_dia <= 18:
+        print("Boa Tarde!")
+    else:
+        print("Boa Noite!")
 
-def boa_tarde():
-    print("Boa Tarde!!")
+resposta = int(input("Digite que horas são:\n"))
 
-def boa_noite():
-    print("Boa noite!!")
-
-def boa_madrugada():
-    print("Boa Madrugada!!")
-
-if data >= 4:
-    bom_dia()
-elif data >= 12:
-    boa_tarde()
-elif data >= 18:
-    boa_noite()
-elif data >= 00:
-    boa_madrugada()
-
+saudacoes(resposta)
