@@ -1,4 +1,9 @@
 saldo = 0.0 #Variavel que guardará o saldo do usuário
+#Declarar função
+def validar_senha():
+    senha_validar = input("Digite sua senha: ")
+    if senha_validar == senha:
+        return True
 while True:    
     #Cadastro de usuario e senha
     #Menu Principal
@@ -11,8 +16,7 @@ while True:
     elif escolha_menu == 2: #Se o usuario escolher login
         #Comparar as inf. cadastradas com uma leituras
         login_usuario = input("\nDigite seu usuario: ")
-        login_senha = input("\nDigite sua senha: ")
-        if login_usuario == usuario and login_senha == senha:
+        if login_usuario == usuario and validar_senha():
             print("\nLOGIN REALIZADO COM SUCESSO.")
             #Se o login correto, entra no menu principal do app
             print("Bem Vindo:", usuario)
@@ -24,27 +28,23 @@ while True:
                     print("O novo saldo é:", saldo)
                 elif escolha_principal == 2:
                     valor_saque = float(input("Digite o valor do saque: "))
-                    senha_saque = input("Digite sua senha: ")
-                    if senha_saque == senha:
+                    if validar_senha():
                         saldo -= valor_saque
                     else:
                         print("Senha incorreta.")
                 elif escolha_principal == 3:
                     valor_pix = float(input("Digite o valor do pix: "))
-                    senha_pix = input("Digite sua senha: ")
-                    if senha_pix == senha:
+                    if validar_senha():
                         saldo -= valor_pix
                     else:
                         print("Senha incorreta: ")
                 elif escolha_principal == 4:
-                    senha_extrato = input("Digite sua senha: ")
-                    if senha_extrato == senha:
+                    if validar_senha():
                         print("Extrato", saldo)
                     else:
                         print("Senha incorreta")
                 elif escolha_principal == 5:
-                    senha_encerramento = input("Digite sua senha: ")
-                    if senha_encerramento == senha:
+                    if validar_senha():
                         break
                     else:
                         print("Senha incorreta.")
